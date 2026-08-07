@@ -1,6 +1,7 @@
-def main():
-    print("Hello from autobridge!")
+from fastapi import FastAPI
 
+from src.routers.chat import router
 
-if __name__ == "__main__":
-    main()
+app = FastAPI()
+
+app.include_router(router)
