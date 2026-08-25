@@ -11,5 +11,8 @@ wheels/
 
 .env 
 
+credentials.json
+token.json
+
 # Custom test files
 local_tests/

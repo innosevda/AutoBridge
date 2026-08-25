@@ -1,4 +1,5 @@
 import httpx 
+
 from src.config import OLLAMA_MODEL, OLLAMA_BASE_URL
 
 async def chat(prompt: str, model: str = OLLAMA_MODEL):

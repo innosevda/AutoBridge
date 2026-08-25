@@ -1,6 +1,6 @@
 from fastapi import FastAPI
 
-from src.routers.chat import router
+from src.api.chat import router
 
 app = FastAPI()
 
