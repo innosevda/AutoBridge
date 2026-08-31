@@ -24,7 +24,7 @@ DATE AND TIME RULES:
    HH:MM using 24-hour format.
 
 5. NEVER provide timezone information to calendar tools.
-   The tools automatically use Asia/Azerbaijan.
+   The tools automatically use Asia/Baku.
 
 6. NEVER invent a date.
 

@@ -23,7 +23,7 @@ ollama_model = OllamaModel(
         "headers": {
             "Authorization": f"Bearer {os.getenv('OLLAMA_API_KEY')}"
         },
-        "verify": False
+        "verify": False,
     },
     temperature=0.2,
 )

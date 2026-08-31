@@ -1,6 +1,6 @@
 from strands import tool
 
-from datetime import datetime
+from datetime import datetime, timedelta
 from zoneinfo import ZoneInfo
 
 from src.clients.calendar_service import CalendarService
@@ -25,9 +25,6 @@ def create_calendar_event(
     print("duration:", repr(duration_minutes))
     print("description:", repr(description))
     print("location:", repr(location))
-
-    from datetime import datetime, timedelta
-    from zoneinfo import ZoneInfo
 
     try:
         timezone = ZoneInfo("Asia/Baku")
@@ -64,44 +61,6 @@ def create_calendar_event(
         print("========================================\n")
 
         return f"ERROR creating calendar event: {type(e).__name__}: {e}"
-
-# @tool
-# def create_calendar_event(
-#     summary: str,
-#     start_datetime: str,
-#     end_datetime: str,
-#     description: str = "",
-#     location: str = "",
-# ) -> str:
-#     """
-#     Create an event in the user's Google Calendar.
-
-#     Args:
-#         summary: Event title.
-#         start_datetime: Start datetime in ISO 8601 format.
-#         end_datetime: End datetime in ISO 8601 format.
-#         description: Optional event description.
-#         location: Optional event location.
-
-#     Returns:
-#         Information about the created event.
-
-#     The user's timezone is Asia/Baku.
-#     """
-
-#     event = calendar_service.create_event(
-#         summary=summary,
-#         start_datetime=start_datetime,
-#         end_datetime=end_datetime,
-#         description=description,
-#         location=location,
-#     )
-
-#     return (
-#         f"Event created successfully. "
-#         f"Event ID: {event['id']}. "
-#         f"Title: {event['summary']}"
-#     )
 
 @tool
 def list_calendar_events(
