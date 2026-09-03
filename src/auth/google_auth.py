@@ -1,6 +1,7 @@
 import os
 from typing import Optional
 
+
 import httplib2
 from google.auth.transport.requests import Request
 from google.oauth2.credentials import Credentials
@@ -47,6 +48,7 @@ def get_calendar_credentials() -> Credentials:
 
         if creds and creds.expired and creds.refresh_token:
             print("Access token expired. Refreshing token...")
+
             creds.refresh(Request())
 
         else:

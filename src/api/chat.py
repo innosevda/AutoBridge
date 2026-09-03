@@ -1,13 +1,11 @@
 from fastapi import APIRouter
 
-# from src.agents.assistant import Assistant
+from src.agents.agent import agent
 from src.schemas.request import ChatRequest
-from src.schemas.response import ChatResponse
 
 router = APIRouter(prefix="/chat", tags=["Chat"])
 
 @router.post("/")
-async def chat_router(prompt: ChatRequest) -> ChatResponse:
-    reply = await Assistant.chat(prompt.message)
+async def chat_router(prompt: ChatRequest):
+    reply = agent(prompt.message)
     return reply
-
